@@ -8,8 +8,8 @@ import java.util.List;
  */
 enum BasicMessages {
 
-    PRESENTATION(Arrays.asList("I'm", "Samaritan,", "An", "Micro-Artificial", "Intelligence", "Made", "In", "Java", "And", "JavaFX", "For", "UI")),
-    AUTHOR(Arrays.asList("My", "Creator", "Is", "Bussignies", "Jean-Baptiste", "Also", "Known", "By", "JonhSHEPARD", "Or", "ADMIN", "For", "Me")),
+    PRESENTATION(Arrays.asList("I'm", "Samaritan,", "A", "Micro-Artificial", "Intelligence", "Made", "In", "Java", "And", "JavaFX", "For", "UI")),
+    AUTHOR(Arrays.asList("My", "Creator", "Is", "Bussignies", "Jean-Baptiste", "Also", "Known", "As", "JonhSHEPARD", "Or", "ADMIN", "For", "Me")),
     END(Arrays.asList("I'm", "Going", "To", "Disappear"));
 
     private List<String> messages;
