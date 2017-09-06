@@ -3,8 +3,7 @@
 
   <h3 align="center">SamaritanJ</h3>
 
-  <p align="center>
-    A micro Samaritan (inspired by Person Of Interest) made in java with PandoraBot
+  A micro Samaritan (inspired by Person Of Interest) made in java with PandoraBot
 </p>
 
 ## How to use it ?
