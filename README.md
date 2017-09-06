@@ -5,7 +5,6 @@
 
   <p align="center>
     A micro Samaritan (inspired by Person Of Interest) made in java with PandoraBot
-  </p>
 </p>
 
 ## How to use it ?
