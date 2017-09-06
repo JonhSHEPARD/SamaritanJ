@@ -18,7 +18,7 @@ You can launch this app with a few arguments:
 - \-debug | That allows you to see the exact response from PandoraBots
 - \-voice | That will, in the future, allow you to use speech recognition to talk with the bot
 
-# Credits
+## Credits
 - Original name of this App is extract from the TV Show Person of Interest
 - The A.I. is provided by [PandoraBot] (https://www.pandorabots.com/)
 - The library for interacting with the bot is [Chatter Bot API] (https://github.com/pierredavidbelanger/chatter-bot-api)
