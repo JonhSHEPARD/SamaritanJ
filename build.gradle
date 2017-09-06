@@ -2,6 +2,7 @@ group 'fr.jonhshepard.samaritanj'
 version '1.0-SNAPSHOT'
 
 apply plugin: 'java'
+compileJava.options.encoding = 'UTF-8'
 
 sourceCompatibility = 1.6
 
@@ -13,7 +14,17 @@ repositories {
 dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.11'
     compile group: 'org.json', name: 'json', version: '20090211'
-    compile group: 'edu.cmu.sphinx', name: 'sphinx4-core', version:'5prealpha-SNAPSHOT'
-    compile group: 'edu.cmu.sphinx', name: 'sphinx4-data', version:'5prealpha-SNAPSHOT'
+    //compile group: 'edu.cmu.sphinx', name: 'sphinx4-core', version: '5prealpha-SNAPSHOT'
+    //compile group: 'edu.cmu.sphinx', name: 'sphinx4-data', version: '5prealpha-SNAPSHOT'
     compile 'ca.pjer:chatter-bot-api:2.0.1'
+}
+
+jar {
+    manifest {
+        attributes('Main-Class': 'io.github.jonhshepard.samaritanj.Samaritan')
+    }
+
+    from {
+        configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
+    }
 }

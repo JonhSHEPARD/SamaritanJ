@@ -5,12 +5,9 @@ import com.google.code.chatterbotapi.ChatterBot;
 import com.google.code.chatterbotapi.ChatterBotFactory;
 import com.google.code.chatterbotapi.ChatterBotSession;
 import com.google.code.chatterbotapi.ChatterBotType;
-import edu.cmu.sphinx.api.Configuration;
-import edu.cmu.sphinx.api.LiveSpeechRecognizer;
 import io.github.jonhshepard.samaritanj.frames.SamaritanMainApp;
 import javafx.scene.text.Font;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -65,7 +62,7 @@ public class Samaritan {
 	}
 
 	private void launchVoice() {
-		Configuration configuration = new Configuration();
+		/*Configuration configuration = new Configuration();
 
 		configuration.setAcousticModelPath("resource:/edu/cmu/sphinx/models/en-us/en-us");
 		configuration.setDictionaryPath("resource:/edu/cmu/sphinx/models/en-us/cmudict-en-us.dict");
@@ -89,7 +86,7 @@ public class Samaritan {
 			System.out.print("Press key to stop");
 			if (s.nextLine().equalsIgnoreCase("stop")) break;
 			System.out.println(recognizer.getResult().getHypothesis());
-		}
+		}*/
 	}
 
 	private void launchText() {
