@@ -1,9 +1,5 @@
 package io.github.jonhshepard.samaritanj.frames;
 
-/**
- * @author JonhSHEPARD
- */
-
 import javafx.animation.FadeTransition;
 import javafx.animation.PauseTransition;
 import javafx.animation.ScaleTransition;
@@ -31,6 +27,9 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+/**
+ * @author JonhSHEPARD
+ */
 public class SamaritanMainApp extends Application {
 
     private static SamaritanMainApp instance;

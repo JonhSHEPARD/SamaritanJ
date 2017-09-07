@@ -1,10 +1,7 @@
 package io.github.jonhshepard.samaritanj;
 
 
-import com.google.code.chatterbotapi.ChatterBot;
-import com.google.code.chatterbotapi.ChatterBotFactory;
-import com.google.code.chatterbotapi.ChatterBotSession;
-import com.google.code.chatterbotapi.ChatterBotType;
+import io.github.jonhshepard.samaritanj.bot.PandoraBot;
 import io.github.jonhshepard.samaritanj.frames.SamaritanMainApp;
 import javafx.scene.text.Font;
 
@@ -19,8 +16,11 @@ public class Samaritan {
 
 	private static List<Arguments> arguments = new ArrayList<Arguments>();
 
-	private ChatterBot bot;
-	private ChatterBotSession bot_session;
+	public static boolean isDebug() {
+		return arguments.contains(Arguments.DEBUG);
+	}
+
+	private PandoraBot bot;
 
 	public static void main(String[] args) {
 		for (String s : args) {
@@ -30,9 +30,9 @@ public class Samaritan {
 			} else if (s.toLowerCase().equalsIgnoreCase("-debug") ||
 					s.toLowerCase().equalsIgnoreCase("debug")) {
 				arguments.add(Arguments.DEBUG);
-			} else if ((s.toLowerCase().equalsIgnoreCase("-voice") ||
+			/*} else if ((s.toLowerCase().equalsIgnoreCase("-voice") ||
 					s.toLowerCase().equalsIgnoreCase("voice"))) {
-				arguments.add(Arguments.VOICE);
+				arguments.add(Arguments.VOICE);*/
 			}
 		}
 		new Samaritan();
@@ -40,14 +40,7 @@ public class Samaritan {
 
 	private Samaritan() {
 
-		try {
-			ChatterBotFactory factory = new ChatterBotFactory();
-			bot = factory.create(ChatterBotType.PANDORABOTS, "df385206ae377a2e");
-		} catch (Exception e) {
-			e.printStackTrace();
-			System.exit(1);
-		}
-		bot_session = bot.createSession();
+		bot = new PandoraBot("df385206ae377a2e");
 
 		Font.loadFont(Samaritan.class.getResource("/font/magdacleanmono-bold.ttf").toExternalForm(), 10);
 
@@ -92,6 +85,7 @@ public class Samaritan {
 	private void launchText() {
 		Scanner s = new Scanner(System.in);
 		while (true) {
+			System.out.println("");
 			System.out.println("Text to ask: ");
 			System.out.print(" > ");
 			String line = s.nextLine();
@@ -116,9 +110,8 @@ public class Samaritan {
 					SamaritanMainApp.getInstance().executeText(BasicMessages.PRESENTATION.getMessage(), false);
 				} else {
 					try {
-						String reply = bot_session.think(Utils.removeAccent(line));
-						if (arguments.contains(Arguments.DEBUG)) System.out.println(reply);
-						SamaritanMainApp.getInstance().executeText(reply);
+						String response = bot.think(Utils.removeAccent(line));
+						SamaritanMainApp.getInstance().executeText(response);
 					} catch (Exception e) {
 						e.printStackTrace();
 					}
