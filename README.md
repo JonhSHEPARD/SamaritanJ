@@ -19,5 +19,4 @@ You can launch this app with a few arguments:
 ## Credits
 - Original name of this App is extract from the TV Show Person of Interest
 - The A.I. is provided by [PandoraBot](https://www.pandorabots.com)
-- The library for interacting with the bot is [Chatter Bot API](https://github.com/pierredavidbelanger/chatter-bot-api)
 - Json usage provided by [JSON-java](https://github.com/stleary/JSON-java)
